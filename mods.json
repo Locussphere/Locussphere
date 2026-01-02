@@ -1,0 +1,187 @@
+{
+  "mods": [
+    {
+      "id": 1,
+      "title": "Ultra HD Graphics Overhaul",
+      "description": "Transform your gameplay with the Ultra HD Graphics Overhaul. This mod completely retextures the base game environments, adding 4K textures, improved lighting effects, and realistic weather patterns. Experience the world like never before with volumetric fog, enhanced shadows, and ray-tracing support for compatible hardware.",
+      "shortDescription": "Complete overhaul of the interface for...",
+      "author": "CyberNinja99",
+      "authorAvatar": "./assets/avatars/cyberninja.png",
+      "uploadDate": "2 days ago",
+      "version": "v2.4",
+      "game": "RPG",
+      "category": "Texture Pack",
+      "type": "Graphic",
+      "verified": true,
+      "downloads": "12.5k",
+      "rating": "4.8",
+      "size": "104mb",
+      "downloadPath": "./mods/ultra-hd-graphics.zip",
+      "thumbnail": "./assets/mods/ultra-hd-thumb.jpg",
+      "images": [
+        "./assets/mods/ultra-hd-1.jpg",
+        "./assets/mods/ultra-hd-2.jpg",
+        "./assets/mods/ultra-hd-3.jpg",
+        "./assets/mods/ultra-hd-4.jpg"
+      ],
+      "featured": false,
+      "trending": false,
+      "changelog": [
+        {
+          "version": "2.4",
+          "changes": [
+            "Fixed lighting glitches in the northern forest region during nighttime.",
+            "Optimized rain particle effects for better performance on mid-range devices.",
+            "Added new cloud textures for stormy weather conditions."
+          ]
+        }
+      ],
+      "comments": [
+        {
+          "user": "AlexGamer",
+          "avatar": "./assets/avatars/alex.png",
+          "comment": "Honestly the best graphics mod out there right now. My frame rate barely dropped!",
+          "likes": 24,
+          "time": "2h ago"
+        },
+        {
+          "user": "SarahDev",
+          "avatar": "./assets/avatars/sarah.png",
+          "comment": "Can you please update the water shaders? They look a bit weird at sunset. Otherwise perfect!",
+          "likes": 8,
+          "time": "5h ago"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Cyberpunk 2077: Enhanced UI",
+      "description": "Complete overhaul of the interface for enhanced user experience.",
+      "shortDescription": "Complete overhaul of the interface for...",
+      "author": "TechModder",
+      "authorAvatar": "./assets/avatars/techmodder.png",
+      "uploadDate": "1 week ago",
+      "version": "v1.2",
+      "game": "Cyberpunk 2077",
+      "category": "Interface",
+      "type": "Script",
+      "verified": false,
+      "downloads": "8.2k",
+      "rating": "4.6",
+      "size": "25mb",
+      "downloadPath": "./mods/cyberpunk-ui.zip",
+      "thumbnail": "./assets/mods/cyberpunk-thumb.jpg",
+      "images": [
+        "./assets/mods/cyberpunk-1.jpg"
+      ],
+      "featured": true,
+      "trending": true,
+      "changelog": [],
+      "comments": []
+    },
+    {
+      "id": 3,
+      "title": "Custom Crosshairs Pack",
+      "description": "A collection of pro-player crosshair settings and custom colors.",
+      "shortDescription": "A collection of pro-player crosshair settings and custom colors.",
+      "author": "Aimed_GG",
+      "authorAvatar": "./assets/avatars/aimed.png",
+      "uploadDate": "3 days ago",
+      "version": "v3.0",
+      "game": "FPS",
+      "category": "Gameplay",
+      "type": "Gameplay",
+      "verified": false,
+      "downloads": "2.4k",
+      "rating": "4.7",
+      "size": "5mb",
+      "downloadPath": "./mods/crosshairs-pack.zip",
+      "thumbnail": "./assets/mods/crosshairs-thumb.jpg",
+      "images": [
+        "./assets/mods/crosshairs-1.jpg"
+      ],
+      "featured": false,
+      "trending": false,
+      "changelog": [],
+      "comments": []
+    },
+    {
+      "id": 4,
+      "title": "Porsche 911 GT3 RS",
+      "description": "High-fidelity model with custom physics engine tuning and sound.",
+      "shortDescription": "High-fidelity model with custom physics engine tuning and sound.",
+      "author": "SpeedDemon",
+      "authorAvatar": "./assets/avatars/speeddemon.png",
+      "uploadDate": "5 days ago",
+      "version": "v1.5",
+      "game": "Racing",
+      "category": "Vehicle",
+      "type": "Graphic",
+      "verified": true,
+      "downloads": "15k",
+      "rating": "4.9",
+      "size": "128 MB",
+      "downloadPath": "./mods/porsche-gt3.zip",
+      "thumbnail": "./assets/mods/porsche-thumb.jpg",
+      "images": [
+        "./assets/mods/porsche-1.jpg"
+      ],
+      "featured": false,
+      "trending": false,
+      "changelog": [],
+      "comments": []
+    },
+    {
+      "id": 5,
+      "title": "Calamity Music Pack",
+      "description": "Replaces vanilla boss music with epic orchestral tracks.",
+      "shortDescription": "Replaces vanilla boss music with epic orchestral tracks.",
+      "author": "AudioPixel",
+      "authorAvatar": "./assets/avatars/audiopixel.png",
+      "uploadDate": "1 week ago",
+      "version": "v2.1",
+      "game": "Terraria",
+      "category": "Audio",
+      "type": "Audio",
+      "verified": false,
+      "downloads": "856",
+      "rating": "4.5",
+      "size": "65 MB",
+      "downloadPath": "./mods/calamity-music.zip",
+      "thumbnail": "./assets/mods/calamity-thumb.jpg",
+      "images": [
+        "./assets/mods/calamity-1.jpg"
+      ],
+      "featured": false,
+      "trending": false,
+      "changelog": [],
+      "comments": []
+    },
+    {
+      "id": 6,
+      "title": "Dark Mode (Unlock FPS)",
+      "description": "Uncaps framerate and slightly adjusts enemy damage scaling.",
+      "shortDescription": "Uncaps framerate and slightly adjusts enemy damage scaling.",
+      "author": "Tarnished_One",
+      "authorAvatar": "./assets/avatars/tarnished.png",
+      "uploadDate": "2 weeks ago",
+      "version": "v1.0",
+      "game": "RPG",
+      "category": "Gameplay",
+      "type": "Script",
+      "verified": false,
+      "downloads": "45k",
+      "rating": "4.8",
+      "size": "1 MB",
+      "downloadPath": "./mods/dark-mode-fps.zip",
+      "thumbnail": "./assets/mods/darkmode-thumb.jpg",
+      "images": [
+        "./assets/mods/darkmode-1.jpg"
+      ],
+      "featured": false,
+      "trending": false,
+      "changelog": [],
+      "comments": []
+    }
+  ]
+}
