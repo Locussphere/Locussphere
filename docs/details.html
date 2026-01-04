@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mod Details - ModHub</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="details-page">
+    <!-- Header -->
+    <header class="details-header">
+        <button class="back-btn" onclick="window.history.back()">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M19 12H5M12 19l-7-7 7-7"/>
+            </svg>
+        </button>
+        <h1 class="page-title">Mod Details</h1>
+        <button class="share-btn">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="18" cy="5" r="3"></circle>
+                <circle cx="6" cy="12" r="3"></circle>
+                <circle cx="18" cy="19" r="3"></circle>
+                <line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line>
+                <line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line>
+            </svg>
+        </button>
+    </header>
+
+    <!-- Main Image Gallery -->
+    <div class="image-gallery">
+        <div class="main-image" id="mainImage">
+            <div class="image-counter" id="imageCounter">1/5</div>
+        </div>
+        <div class="thumbnail-strip" id="thumbnailStrip">
+            <!-- Thumbnails will be loaded here -->
+        </div>
+    </div>
+
+    <!-- Mod Info -->
+    <div class="mod-info-container">
+        <div class="mod-header">
+            <div class="mod-title-section">
+                <h2 id="modTitle">Loading...</h2>
+                <button class="favorite-btn" id="favoriteBtn">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                    </svg>
+                </button>
+            </div>
+            <div class="author-info" id="authorInfo">
+                <img src="" alt="Author" class="author-avatar">
+                <span class="author-name"></span>
+                <span class="upload-date"></span>
+            </div>
+        </div>
+
+        <!-- Mod Tags -->
+        <div class="mod-tags" id="modTags">
+            <!-- Tags will be loaded here -->
+        </div>
+
+        <!-- Stats -->
+        <div class="mod-stats">
+            <div class="stat-item">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                    <polyline points="7 10 12 15 17 10"></polyline>
+                    <line x1="12" y1="15" x2="12" y2="3"></line>
+                </svg>
+                <div class="stat-info">
+                    <span class="stat-label">Downloads</span>
+                    <span class="stat-value" id="downloads">-</span>
+                </div>
+            </div>
+            <div class="stat-item">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                    <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                </svg>
+                <div class="stat-info">
+                    <span class="stat-label">Rating</span>
+                    <span class="stat-value" id="rating">-</span>
+                </div>
+            </div>
+            <div class="stat-item">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"></path>
+                    <polyline points="13 2 13 9 20 9"></polyline>
+                </svg>
+                <div class="stat-info">
+                    <span class="stat-label">Size</span>
+                    <span class="stat-value" id="size">-</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- About Section -->
+        <div class="about-section">
+            <h3>About this mod</h3>
+            <p id="modDescription">Loading...</p>
+            <button class="read-more-btn" id="readMoreBtn">Read more</button>
+        </div>
+
+        <!-- Version Selector -->
+        <div class="version-selector" id="versionSelector">
+            <h3>Select Version</h3>
+            <div class="version-list" id="versionList">
+                <!-- Version items will be loaded here -->
+            </div>
+        </div>
+
+        <!-- Changelog Section -->
+        <div class="changelog-section" id="changelogSection">
+            <div class="changelog-header">
+                <h3>Changelog</h3>
+                <span class="version-badge" id="versionBadge">v2.4</span>
+            </div>
+            <ul class="changelog-list" id="changelogList">
+                <!-- Changelog items will be loaded here -->
+            </ul>
+        </div>
+
+        <!-- Comments Section -->
+        <div class="comments-section">
+            <div class="comments-header">
+                <h3>Comments</h3>
+                <span class="comment-count" id="commentCount">(0)</span>
+                <a href="#" class="see-all">See all</a>
+            </div>
+            
+            <!-- Add Comment -->
+            <div class="add-comment">
+                <div class="user-avatar">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                        <circle cx="12" cy="7" r="4"></circle>
+                    </svg>
+                </div>
+                <input type="text" placeholder="Add a comment..." class="comment-input">
+            </div>
+
+            <!-- Comments List -->
+            <div class="comments-list" id="commentsList">
+                <!-- Comments will be loaded here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Download Button -->
+    <div class="download-footer">
+        <a href="#" class="download-btn" id="downloadBtn">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                <polyline points="7 10 12 15 17 10"></polyline>
+                <line x1="12" y1="15" x2="12" y2="3"></line>
+            </svg>
+            Download Mod
+        </a>
+        <button class="bookmark-btn" id="bookmarkBtn">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path>
+            </svg>
+        </button>
+    </div>
+
+    <script src="details.js"></script>
+</body>
+</html>
