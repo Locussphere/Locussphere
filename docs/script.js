@@ -1,257 +1,244 @@
-// Load mods data
-let modsData = [];
-let currentFilter = 'all';
-let currentSort = 'recent';
+/* ═══════════════════════════════════════
+   THEME TOGGLE
+   ═══════════════════════════════════════ */
+(function(){
+    const btn=document.getElementById('themeToggle');
+    const sun=document.querySelector('.sun-icon');
+    const moon=document.querySelector('.moon-icon');
+    if(!btn) return;
+    const saved=localStorage.getItem('locus-theme');
+    if(saved==='light') setLight();
 
-// Fetch mods from JSON file
-async function loadMods() {
-    try {
-        const response = await fetch('mods.json');
-        const data = await response.json();
-        modsData = data.mods;
-        displayFeaturedMods();
-        displayRecentMods();
-        updateUploadCount();
-    } catch (error) {
-        console.error('Error loading mods:', error);
-    }
-}
+    btn.addEventListener('click',()=>document.body.classList.contains('light-mode')?setDark():setLight());
 
-// Display featured mods
-function displayFeaturedMods() {
-    const featuredCarousel = document.getElementById('featuredCarousel');
-    const featuredMods = modsData.filter(mod => mod.featured || mod.trending);
-    
-    featuredCarousel.innerHTML = featuredMods.map(mod => `
-        <div class="featured-card" onclick="goToDetails(${mod.id})">
-            ${mod.trending ? '<span class="trending-badge">TRENDING</span>' : ''}
-            <h3>${mod.title}</h3>
-            <p>${mod.shortDescription}</p>
-        </div>
-    `).join('');
-}
+    function setLight(){document.body.classList.add('light-mode');sun&&sun.classList.add('hidden');moon&&moon.classList.remove('hidden');localStorage.setItem('locus-theme','light');}
+    function setDark(){document.body.classList.remove('light-mode');sun&&sun.classList.remove('hidden');moon&&moon.classList.add('hidden');localStorage.setItem('locus-theme','dark');}
+})();
 
-// Display recent mods
-function displayRecentMods() {
-    const modsGrid = document.getElementById('modsGrid');
-    let filteredMods = [...modsData];
-    
-    // Apply filters
-    if (currentFilter !== 'all') {
-        filteredMods = filteredMods.filter(mod =>
-            mod.game.toLowerCase() === currentFilter.toLowerCase() ||
-            mod.type.toLowerCase() === currentFilter.toLowerCase()
-        );
-    }
-    
-    // Apply sorting
-    if (currentSort === 'rating') {
-        filteredMods.sort((a, b) => parseFloat(b.rating) - parseFloat(a.rating));
-    } else if (currentSort === 'downloads') {
-        filteredMods.sort((a, b) => {
-            const aDownloads = parseFloat(a.downloads.replace('k', '')) * 1000;
-            const bDownloads = parseFloat(b.downloads.replace('k', '')) * 1000;
-            return bDownloads - aDownloads;
-        });
-    }
-    
-    modsGrid.innerHTML = filteredMods.map(mod => `
-        <a href="details.html?id=${mod.id}" class="mod-card">
-            <img src="${mod.thumbnail}" alt="${mod.title}" class="mod-card-image" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'200\' height=\'200\'%3E%3Crect fill=\'%232d3142\' width=\'200\' height=\'200\'/%3E%3C/svg%3E'">
-            <div class="mod-card-content">
-                <span class="mod-card-badge">${mod.type}</span>
-                <h3 class="mod-card-title">${mod.title}</h3>
-                <p class="mod-card-description">${mod.shortDescription}</p>
-                <div class="mod-card-footer">
-                    <div class="mod-author">
-                        <div class="mod-author-avatar" style="background-image: url('${mod.authorAvatar}')"></div>
-                        <span>${mod.author}</span>
-                    </div>
-                    <div class="mod-downloads">
-                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
-                            <polyline points="7 10 12 15 17 10"></polyline>
-                            <line x1="12" y1="15" x2="12" y2="3"></line>
-                        </svg>
-                        ${mod.downloads}
-                    </div>
-                </div>
-            </div>
-        </a>
-    `).join('');
-}
+/* ═══════════════════════════════════════
+   INDEX PAGE
+   ═══════════════════════════════════════ */
+(function(){
+    const grid=document.getElementById('cardGrid');
+    if(!grid) return;
 
-// Update upload count
-function updateUploadCount() {
-    const uploadCount = document.getElementById('uploadCount');
-    uploadCount.textContent = `${modsData.length} new`;
-}
+    let all=[], cat='all';
 
-// Navigate to details page
-function goToDetails(modId) {
-    window.location.href = `details.html?id=${modId}`;
-}
+    fetch('mods.json').then(r=>r.json()).then(d=>{all=d;render();}).catch(()=>{grid.innerHTML='<p style="color:var(--text-secondary)">Failed to load.</p>';});
 
-// Search functionality
-const searchInput = document.getElementById('searchInput');
-searchInput.addEventListener('input', (e) => {
-    const searchTerm = e.target.value.toLowerCase();
-    
-    if (searchTerm === '') {
-        displayRecentMods();
-        return;
-    }
-    
-    const filteredMods = modsData.filter(mod =>
-        mod.title.toLowerCase().includes(searchTerm) ||
-        mod.author.toLowerCase().includes(searchTerm) ||
-        mod.game.toLowerCase().includes(searchTerm) ||
-        mod.type.toLowerCase().includes(searchTerm)
-    );
-    
-    const modsGrid = document.getElementById('modsGrid');
-    
-    if (filteredMods.length === 0) {
-        modsGrid.innerHTML = '<p style="grid-column: 1/-1; text-align: center; padding: 40px; color: var(--text-secondary);">No mods found</p>';
-        return;
-    }
-    
-    modsGrid.innerHTML = filteredMods.map(mod => `
-        <a href="details.html?id=${mod.id}" class="mod-card">
-            <img src="${mod.thumbnail}" alt="${mod.title}" class="mod-card-image" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'200\' height=\'200\'%3E%3Crect fill=\'%232d3142\' width=\'200\' height=\'200\'/%3E%3C/svg%3E'">
-            <div class="mod-card-content">
-                <span class="mod-card-badge">${mod.type}</span>
-                <h3 class="mod-card-title">${mod.title}</h3>
-                <p class="mod-card-description">${mod.shortDescription}</p>
-                <div class="mod-card-footer">
-                    <div class="mod-author">
-                        <div class="mod-author-avatar" style="background-image: url('${mod.authorAvatar}')"></div>
-                        <span>${mod.author}</span>
-                    </div>
-                    <div class="mod-downloads">
-                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
-                            <polyline points="7 10 12 15 17 10"></polyline>
-                            <line x1="12" y1="15" x2="12" y2="3"></line>
-                        </svg>
-                        ${mod.downloads}
-                    </div>
-                </div>
-            </div>
-        </a>
-    `).join('');
-});
-
-// Dropdown menus functionality
-const dropdownMenus = {
-    game: ['All Games', 'minecraft'],
-    type: ['All Types', 'Graphic', 'Gameplay', 'Audio', 'Map', 'Script'],
-    sort: ['Most Recent', 'Most Downloaded', 'Highest Rated']
-};
-
-// Create and show dropdown
-function showDropdown(filterType, button) {
-    // Remove any existing dropdown
-    const existingDropdown = document.querySelector('.dropdown-menu');
-    if (existingDropdown) {
-        existingDropdown.remove();
-    }
-    
-    // Create dropdown menu
-    const dropdown = document.createElement('div');
-    dropdown.className = 'dropdown-menu';
-    
-    const options = dropdownMenus[filterType];
-    dropdown.innerHTML = options.map(option => `
-        <div class="dropdown-item" data-value="${option.toLowerCase()}">${option}</div>
-    `).join('');
-    
-    // Position dropdown
-    const rect = button.getBoundingClientRect();
-    dropdown.style.top = rect.bottom + 8 + 'px';
-    dropdown.style.left = rect.left + 'px';
-    dropdown.style.minWidth = rect.width + 'px';
-    
-    document.body.appendChild(dropdown);
-    
-    // Add click handlers to dropdown items
-    dropdown.querySelectorAll('.dropdown-item').forEach(item => {
-        item.addEventListener('click', () => {
-            const value = item.dataset.value;
-            
-            if (filterType === 'game') {
-                if (value === 'all games') {
-                    currentFilter = 'all';
-                } else {
-                    currentFilter = value;
-                }
-                button.innerHTML = `${item.textContent} <span class="arrow-down">▾</span>`;
-            } else if (filterType === 'type') {
-                if (value === 'all types') {
-                    currentFilter = 'all';
-                } else {
-                    currentFilter = value;
-                }
-                button.innerHTML = `${item.textContent} <span class="arrow-down">▾</span>`;
-            } else if (filterType === 'sort') {
-                if (value === 'most recent') {
-                    currentSort = 'recent';
-                } else if (value === 'most downloaded') {
-                    currentSort = 'downloads';
-                } else if (value === 'highest rated') {
-                    currentSort = 'rating';
-                }
-                button.innerHTML = `${item.textContent} <span class="arrow-down">▾</span>`;
-            }
-            
-            displayRecentMods();
-            dropdown.remove();
+    // category clicks
+    document.querySelectorAll('.category-list li').forEach(li=>{
+        li.addEventListener('click',()=>{
+            document.querySelectorAll('.category-list li').forEach(x=>x.classList.remove('active'));
+            li.classList.add('active');
+            cat=li.dataset.category;
+            render();
         });
     });
-    
-    // Close dropdown when clicking outside
-    setTimeout(() => {
-        document.addEventListener('click', function closeDropdown(e) {
-            if (!dropdown.contains(e.target) && e.target !== button) {
-                dropdown.remove();
-                document.removeEventListener('click', closeDropdown);
-            }
-        });
-    }, 0);
-}
 
-// Filter functionality
-const filterButtons = document.querySelectorAll('.filter-btn');
-filterButtons.forEach(btn => {
-    btn.addEventListener('click', (e) => {
-        const filter = btn.dataset.filter;
-        
-        if (filter === 'all') {
-            // Remove active class from all buttons
-            filterButtons.forEach(b => b.classList.remove('active'));
-            // Add active class to clicked button
-            btn.classList.add('active');
-            currentFilter = 'all';
-            displayRecentMods();
-        } else if (filter === 'rating') {
-            // Remove active class from all buttons
-            filterButtons.forEach(b => b.classList.remove('active'));
-            // Add active class to clicked button
-            btn.classList.add('active');
-            currentSort = 'rating';
-            displayRecentMods();
-        } else if (btn.classList.contains('dropdown')) {
-            showDropdown(filter, btn);
+    // search
+    const inp=document.getElementById('searchInput');
+    if(inp) inp.addEventListener('input',render);
+
+    function render(){
+        const q=(inp?inp.value:'').toLowerCase();
+        let list=all;
+        if(cat!=='all') list=list.filter(p=>p.category.toLowerCase().replace(/\s+/g,'-')===cat);
+        if(q) list=list.filter(p=>p.title.toLowerCase().includes(q)||p.description.toLowerCase().includes(q));
+
+        const cnt=document.getElementById('resultsCount');
+        if(cnt) cnt.textContent=`${list.length} project${list.length!==1?'s':''}  found`;
+
+        grid.innerHTML='';
+        list.forEach(p=>{
+            // pick badge colour class
+            let bc='';
+            if(p.category==='Resource Packs') bc=' badge-rp';
+            else if(p.category==='Tools') bc=' badge-tool';
+            else if(p.category==='3D Models') bc=' badge-3d';
+
+            const a=document.createElement('a');
+            a.className='project-card';
+            a.href=`details.html?id=${p.id}`;
+            a.innerHTML=`
+                <img class="card-thumbnail" src="${p.thumbnail}" alt="${p.title}" onerror="this.style.background='var(--bg-tertiary)'">
+                <div class="card-content">
+                    <div class="card-header">
+                        <span class="card-title">${p.title}</span>
+                        <span class="card-badge${bc}">${p.category}</span>
+                    </div>
+                    <p class="card-description">${p.description}</p>
+                    <div class="card-footer">
+                        <span class="card-meta">Multiple versions available</span>
+                    </div>
+                </div>`;
+            grid.appendChild(a);
+        });
+    }
+})();
+
+/* ═══════════════════════════════════════
+   DETAILS PAGE
+   ═══════════════════════════════════════ */
+(function(){
+    const mainPreview=document.getElementById('mainPreview');
+    const bannerWrap=document.getElementById('bannerWrap');
+    // If neither exist we are not on details page
+    if(!mainPreview && !bannerWrap) return;
+
+    const id=new URLSearchParams(location.search).get('id');
+    let project=null;
+    let imgIdx=0;
+
+    fetch('mods.json').then(r=>r.json()).then(list=>{
+        project=list.find(p=>p.id===id);
+        if(!project){document.body.innerHTML='<h2 style="padding:60px;color:var(--text-secondary)">Project not found.</h2>';return;}
+        init();
+    }).catch(()=>{document.body.innerHTML='<h2 style="padding:60px;color:var(--text-secondary)">Failed to load.</h2>';});
+
+    /* ── bootstrap ── */
+    function init(){
+        // static text
+        setText('projectTitle',project.title);
+        setText('projectDescription',project.description);
+        setText('breadcrumbCategory',project.category);
+        setText('breadcrumbTitle',project.title);
+        setText('category',project.category);
+
+        // conditional: banner vs slider
+        const hasScreenshots = project.screenshots && project.screenshots.length > 0;
+        if(hasScreenshots){
+            // hide banner, show slider
+            document.getElementById('bannerWrap').classList.add('hidden');
+            document.getElementById('sliderWrap').classList.remove('hidden');
+            buildSlider();
+        } else {
+            // show banner, hide slider
+            document.getElementById('bannerWrap').classList.remove('hidden');
+            document.getElementById('sliderWrap').classList.add('hidden');
+            document.getElementById('bannerImg').src=project.banner;
         }
-    });
-});
 
-// Load more button
-const loadMoreBtn = document.getElementById('loadMoreBtn');
-loadMoreBtn.addEventListener('click', () => {
-    // In a real app, this would load more mods from the server
-    alert('Load more functionality - Add more mods to mods.json to see more results!');
-});
+        // build loader dropdown
+        buildLoaderSelect();
+    }
 
-// Initialize
-loadMods();
+    /* ── Loader select ── */
+    function buildLoaderSelect(){
+        const sel=document.getElementById('loaderSelect');
+        sel.innerHTML='';
+        const loaders=Object.keys(project.loaders);
+        loaders.forEach(name=>{
+            const opt=document.createElement('option');
+            opt.value=name;
+            opt.textContent=name;
+            sel.appendChild(opt);
+        });
+        sel.value=loaders[0];
+        sel.addEventListener('change',()=>buildVersionSelect());
+        buildVersionSelect(); // populate versions for default loader
+    }
+
+    /* ── Version select (depends on chosen loader) ── */
+    function buildVersionSelect(){
+        const loader=document.getElementById('loaderSelect').value;
+        const sel=document.getElementById('versionSelect');
+        sel.innerHTML='';
+        const versions=Object.keys(project.loaders[loader].versions).sort(compareVersions);
+        versions.forEach(v=>{
+            const opt=document.createElement('option');
+            opt.value=v;
+            opt.textContent=v;
+            sel.appendChild(opt);
+        });
+        sel.value=versions[0]; // default = highest version
+        sel.addEventListener('change',()=>renderVersionData());
+        renderVersionData();
+    }
+
+    /* ── Render changelog + file size for current loader+version ── */
+    function renderVersionData(){
+        const loader=document.getElementById('loaderSelect').value;
+        const ver=document.getElementById('versionSelect').value;
+        const data=project.loaders[loader].versions[ver];
+
+        // file size
+        setText('fileSize',data.fileSize);
+
+        // download wiring
+        document.getElementById('downloadButton').onclick=()=>window.open(data.downloadLink,'_blank');
+
+        // changelog rows
+        const card=document.getElementById('versionCard');
+        card.innerHTML='<div class="version-list"></div>';
+        const list=card.querySelector('.version-list');
+
+        data.changelog.forEach((entry,i)=>{
+            const row=document.createElement('div');
+            row.className='version-row'+(i===0?' active':'');
+            row.innerHTML=`
+                <div class="vr-left">
+                    <span class="vr-ver">${entry.version}</span>
+                    <span class="vr-date">${entry.date}</span>
+                </div>
+                <div class="vr-right">
+                    <p class="vr-changes">${entry.changes}</p>
+                </div>`;
+            row.addEventListener('click',()=>{
+                card.querySelectorAll('.version-row').forEach(r=>r.classList.remove('active'));
+                row.classList.add('active');
+            });
+            list.appendChild(row);
+        });
+    }
+
+    /* ── Screenshot Slider (Resource Packs only) ── */
+    function buildSlider(){
+        const imgs=project.screenshots;
+        const strip=document.getElementById('thumbStrip');
+        strip.innerHTML='';
+
+        imgs.forEach((src,i)=>{
+            const img=document.createElement('img');
+            img.className='thumb'+(i===0?' active':'');
+            img.src=src;
+            img.alt='Screenshot '+(i+1);
+            img.onclick=()=>goTo(i);
+            strip.appendChild(img);
+        });
+
+        goTo(0);
+
+        document.getElementById('prevBtn').onclick=()=>goTo((imgIdx-1+imgs.length)%imgs.length);
+        document.getElementById('nextBtn').onclick=()=>goTo((imgIdx+1)%imgs.length);
+
+        document.addEventListener('keydown',e=>{
+            if(e.key==='ArrowLeft') document.getElementById('prevBtn').click();
+            if(e.key==='ArrowRight') document.getElementById('nextBtn').click();
+        });
+    }
+
+    function goTo(i){
+        imgIdx=i;
+        const prev=document.getElementById('mainPreview');
+        prev.style.opacity='0';
+        setTimeout(()=>{prev.src=project.screenshots[i];prev.style.opacity='1';},150);
+        document.querySelectorAll('.thumb').forEach((t,idx)=>t.classList.toggle('active',idx===i));
+        const active=document.querySelectorAll('.thumb')[i];
+        if(active) active.scrollIntoView({inline:'center',behavior:'smooth'});
+    }
+
+    /* ── Utility ── */
+    function setText(id,txt){const el=document.getElementById(id);if(el) el.textContent=txt;}
+
+    // Sort game versions descending (1.20.4 > 1.20.2 > 1.19.4 …)
+    function compareVersions(a,b){
+        const pa=a.split('.').map(Number);
+        const pb=b.split('.').map(Number);
+        for(let i=0;i<Math.max(pa.length,pb.length);i++){
+            const na=pa[i]||0, nb=pb[i]||0;
+            if(na!==nb) return nb-na;
+        }
+        return 0;
+    }
+})();
