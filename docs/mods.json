@@ -1,262 +1,195 @@
-{
-  "mods": [
-    {
-      "id": 1,
-      "title": "Ultra HD Graphics Overhaul",
-      "description": "Transform your gameplay with the Ultra HD Graphics Overhaul. This mod completely retextures the base game environments, adding 4K textures, improved lighting effects, and realistic weather patterns. Experience the world like never before with volumetric fog, enhanced shadows, and ray-tracing support for compatible hardware.",
-      "shortDescription": "Complete overhaul of the interface for...",
-      "author": "CyberNinja99",
-      "authorAvatar": "./assets/avatars/cyberninja.png",
-      "uploadDate": "2 days ago",
-      "currentVersion": "v2.4",
-      "game": "RPG",
-      "category": "Texture Pack",
-      "type": "Graphic",
-      "verified": true,
-      "downloads": "12.5k",
-      "rating": "4.8",
-      "thumbnail": "./assets/mods/ultra-hd-thumb.jpg",
-      "images": [
-        "./assets/mods/ultra-hd-1.jpg",
-        "./assets/mods/ultra-hd-2.jpg",
-        "./assets/mods/ultra-hd-3.jpg",
-        "./assets/mods/ultra-hd-4.jpg"
-      ],
-      "featured": false,
-      "trending": false,
-      "versions": [
-        {
-          "version": "v2.4",
-          "size": "104mb",
-          "downloadPath": "./mods/ultra-hd-graphics-v2.4.zip",
-          "releaseDate": "2 days ago",
-          "changelog": [
-            "Fixed lighting glitches in the northern forest region during nighttime.",
-            "Optimized rain particle effects for better performance on mid-range devices.",
-            "Added new cloud textures for stormy weather conditions."
-          ]
-        },
-        {
-          "version": "v2.3",
-          "size": "102mb",
-          "downloadPath": "./mods/ultra-hd-graphics-v2.3.zip",
-          "releaseDate": "1 week ago",
-          "changelog": [
-            "Improved water reflections.",
-            "Fixed texture loading issues on AMD GPUs."
-          ]
-        },
-        {
-          "version": "v2.2",
-          "size": "98mb",
-          "downloadPath": "./mods/ultra-hd-graphics-v2.2.zip",
-          "releaseDate": "2 weeks ago",
-          "changelog": [
-            "Initial release of 4K texture pack.",
-            "Added HDR support."
-          ]
+[
+  {
+    "id": "epic-sword-mod",
+    "title": "Epic Sword Collection",
+    "description": "A comprehensive collection of beautifully crafted medieval and fantasy swords with custom animations and particle effects. Adds 40+ unique swords with special abilities.",
+    "category": "Mods",
+    "thumbnail": "https://images.unsplash.com/photo-1604881991720-f91add269bed?w=400&h=240&fit=crop",
+    "banner": "https://images.unsplash.com/photo-1604881991720-f91add269bed?w=900&h=400&fit=crop",
+    "screenshots": [],
+    "loaders": {
+      "Fabric": {
+        "versions": {
+          "1.20.4": { "fileSize": "24.5 MB", "downloadLink": "#dl-epic-sword-fabric-1.20.4", "changelog": [{ "version": "v2.1.0", "date": "2025-01-10", "changes": "Added 15 new legendary sword variants. Fixed texture rendering on RTX cards. Improved combat animations." }, { "version": "v2.0.0", "date": "2024-12-15", "changes": "Complete rewrite of weapon system. Added crafting recipes for all swords." }] },
+          "1.20.2": { "fileSize": "24.1 MB", "downloadLink": "#dl-epic-sword-fabric-1.20.2", "changelog": [{ "version": "v2.0.5", "date": "2024-12-28", "changes": "Performance optimizations for multiplayer. Fixed crash with enchantment combos." }] },
+          "1.19.4": { "fileSize": "23.8 MB", "downloadLink": "#dl-epic-sword-fabric-1.19.4", "changelog": [{ "version": "v1.9.0", "date": "2024-11-20", "changes": "Initial Fabric 1.19.4 port. All base swords included." }] }
         }
-      ],
-      "comments": [
-        {
-          "user": "AlexGamer",
-          "avatar": "./assets/avatars/alex.png",
-          "comment": "Honestly the best graphics mod out there right now. My frame rate barely dropped!",
-          "likes": 24,
-          "time": "2h ago"
-        },
-        {
-          "user": "SarahDev",
-          "avatar": "./assets/avatars/sarah.png",
-          "comment": "Can you please update the water shaders? They look a bit weird at sunset. Otherwise perfect!",
-          "likes": 8,
-          "time": "5h ago"
+      },
+      "Forge": {
+        "versions": {
+          "1.20.4": { "fileSize": "25.2 MB", "downloadLink": "#dl-epic-sword-forge-1.20.4", "changelog": [{ "version": "v2.1.1", "date": "2025-01-12", "changes": "Forge 1.20.4 compatibility fix. Resolved item registry conflicts." }] },
+          "1.20.2": { "fileSize": "24.8 MB", "downloadLink": "#dl-epic-sword-forge-1.20.2", "changelog": [{ "version": "v2.0.3", "date": "2024-12-20", "changes": "Forge 1.20.2 stable release. Added JEI integration." }] },
+          "1.19.2": { "fileSize": "22.4 MB", "downloadLink": "#dl-epic-sword-forge-1.19.2", "changelog": [{ "version": "v1.8.0", "date": "2024-11-10", "changes": "Legacy Forge build for 1.19.2. Full sword set included." }] }
         }
-      ]
-    },
-    {
-      "id": 2,
-      "title": "Cyberpunk 2077: Enhanced UI",
-      "description": "Complete overhaul of the interface for enhanced user experience.",
-      "shortDescription": "Complete overhaul of the interface for...",
-      "author": "TechModder",
-      "authorAvatar": "./assets/avatars/techmodder.png",
-      "uploadDate": "1 week ago",
-      "currentVersion": "v1.2",
-      "game": "Cyberpunk 2077",
-      "category": "Interface",
-      "type": "Script",
-      "verified": false,
-      "downloads": "8.2k",
-      "rating": "4.6",
-      "thumbnail": "./assets/mods/cyberpunk-thumb.jpg",
-      "images": [
-        "./assets/mods/cyberpunk-1.jpg"
-      ],
-      "featured": true,
-      "trending": true,
-      "versions": [
-        {
-          "version": "v1.2",
-          "size": "25mb",
-          "downloadPath": "./mods/cyberpunk-ui-v1.2.zip",
-          "releaseDate": "1 week ago",
-          "changelog": [
-            "Redesigned inventory menu.",
-            "Added new HUD elements."
-          ]
-        },
-        {
-          "version": "v1.1",
-          "size": "23mb",
-          "downloadPath": "./mods/cyberpunk-ui-v1.1.zip",
-          "releaseDate": "3 weeks ago",
-          "changelog": [
-            "Bug fixes and improvements."
-          ]
+      },
+      "NeoForge": {
+        "versions": {
+          "1.20.4": { "fileSize": "24.9 MB", "downloadLink": "#dl-epic-sword-neoforge-1.20.4", "changelog": [{ "version": "v2.1.0", "date": "2025-01-11", "changes": "NeoForge 1.20.4 initial release. All features from Forge port included." }] }
         }
-      ],
-      "comments": []
-    },
-    {
-      "id": 3,
-      "title": "Custom Crosshairs Pack",
-      "description": "A collection of pro-player crosshair settings and custom colors.",
-      "shortDescription": "A collection of pro-player crosshair settings and custom colors.",
-      "author": "Aimed_GG",
-      "authorAvatar": "./assets/avatars/aimed.png",
-      "uploadDate": "3 days ago",
-      "currentVersion": "v3.0",
-      "game": "FPS",
-      "category": "Gameplay",
-      "type": "Gameplay",
-      "verified": false,
-      "downloads": "2.4k",
-      "rating": "4.7",
-      "thumbnail": "./assets/mods/crosshairs-thumb.jpg",
-      "images": [
-        "./assets/mods/crosshairs-1.jpg"
-      ],
-      "featured": false,
-      "trending": false,
-      "versions": [
-        {
-          "version": "v3.0",
-          "size": "5mb",
-          "downloadPath": "./mods/crosshairs-pack-v3.0.zip",
-          "releaseDate": "3 days ago",
-          "changelog": [
-            "Added 10 new crosshair designs.",
-            "Improved color customization."
-          ]
-        }
-      ],
-      "comments": []
-    },
-    {
-      "id": 4,
-      "title": "Porsche 911 GT3 RS",
-      "description": "High-fidelity model with custom physics engine tuning and sound.",
-      "shortDescription": "High-fidelity model with custom physics engine tuning and sound.",
-      "author": "SpeedDemon",
-      "authorAvatar": "./assets/avatars/speeddemon.png",
-      "uploadDate": "5 days ago",
-      "currentVersion": "v1.5",
-      "game": "Racing",
-      "category": "Vehicle",
-      "type": "Graphic",
-      "verified": true,
-      "downloads": "15k",
-      "rating": "4.9",
-      "thumbnail": "./assets/mods/porsche-thumb.jpg",
-      "images": [
-        "./assets/mods/porsche-1.jpg"
-      ],
-      "featured": false,
-      "trending": false,
-      "versions": [
-        {
-          "version": "v1.5",
-          "size": "128mb",
-          "downloadPath": "./mods/porsche-gt3-v1.5.zip",
-          "releaseDate": "5 days ago",
-          "changelog": [
-            "Improved engine sounds.",
-            "Enhanced interior details."
-          ]
-        }
-      ],
-      "comments": []
-    },
-    {
-      "id": 5,
-      "title": "Calamity Music Pack",
-      "description": "Replaces vanilla boss music with epic orchestral tracks.",
-      "shortDescription": "Replaces vanilla boss music with epic orchestral tracks.",
-      "author": "AudioPixel",
-      "authorAvatar": "./assets/avatars/audiopixel.png",
-      "uploadDate": "1 week ago",
-      "currentVersion": "v2.1",
-      "game": "Terraria",
-      "category": "Audio",
-      "type": "Audio",
-      "verified": false,
-      "downloads": "856",
-      "rating": "4.5",
-      "thumbnail": "./assets/mods/calamity-thumb.jpg",
-      "images": [
-        "./assets/mods/calamity-1.jpg"
-      ],
-      "featured": false,
-      "trending": false,
-      "versions": [
-        {
-          "version": "v2.1",
-          "size": "65mb",
-          "downloadPath": "./mods/calamity-music-v2.1.zip",
-          "releaseDate": "1 week ago",
-          "changelog": [
-            "Added new boss themes.",
-            "Improved audio quality."
-          ]
-        }
-      ],
-      "comments": []
-    },
-    {
-      "id": 6,
-      "title": "Dark Mode (Unlock FPS)",
-      "description": "Uncaps framerate and slightly adjusts enemy damage scaling.",
-      "shortDescription": "Uncaps framerate and slightly adjusts enemy damage scaling.",
-      "author": "Tarnished_One",
-      "authorAvatar": "./assets/avatars/tarnished.png",
-      "uploadDate": "2 weeks ago",
-      "currentVersion": "v1.0",
-      "game": "RPG",
-      "category": "Gameplay",
-      "type": "Script",
-      "verified": false,
-      "downloads": "45k",
-      "rating": "4.8",
-      "thumbnail": "./assets/mods/darkmode-thumb.jpg",
-      "images": [
-        "./assets/mods/darkmode-1.jpg"
-      ],
-      "featured": false,
-      "trending": false,
-      "versions": [
-        {
-          "version": "v1.0",
-          "size": "1mb",
-          "downloadPath": "./mods/dark-mode-fps-v1.0.zip",
-          "releaseDate": "2 weeks ago",
-          "changelog": [
-            "Initial release.",
-            "Unlocked framerate cap."
-          ]
-        }
-      ],
-      "comments": []
+      }
     }
-  ]
-}
+  },
+  {
+    "id": "fantasy-castle-model",
+    "title": "Medieval Castle Pack",
+    "description": "High-detail 3D structure pack including towers, walls, gates, and interior furnishings. Perfect for medieval-themed builds and adventure maps.",
+    "category": "3D Models",
+    "thumbnail": "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=400&h=240&fit=crop",
+    "banner": "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=900&h=400&fit=crop",
+    "screenshots": [],
+    "loaders": {
+      "Vanilla": {
+        "versions": {
+          "1.20.4": { "fileSize": "156.2 MB", "downloadLink": "#dl-castle-vanilla-1.20.4", "changelog": [{ "version": "v1.5.0", "date": "2025-01-08", "changes": "Added throne room interior. New banner and flag variants. Optimized mesh topology." }, { "version": "v1.4.0", "date": "2024-12-10", "changes": "Initial release. Full castle structure with 12 rooms." }] },
+          "1.20.2": { "fileSize": "155.0 MB", "downloadLink": "#dl-castle-vanilla-1.20.2", "changelog": [{ "version": "v1.4.2", "date": "2024-12-20", "changes": "Fixed block placement issues on 1.20.2. Added LOD variants." }] }
+        }
+      },
+      "Fabric": {
+        "versions": {
+          "1.20.4": { "fileSize": "157.8 MB", "downloadLink": "#dl-castle-fabric-1.20.4", "changelog": [{ "version": "v1.5.1", "date": "2025-01-09", "changes": "Fabric compatibility layer added. Litematica support included." }] }
+        }
+      }
+    }
+  },
+  {
+    "id": "pbr-texture-pack",
+    "title": "Ultra Realistic Resource Pack",
+    "description": "Professional-grade texture overhaul with physically based rendering. Includes custom sky, terrain, blocks, items, and mob textures at 128x and 256x resolution.",
+    "category": "Resource Packs",
+    "thumbnail": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=400&h=240&fit=crop",
+    "banner": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=900&h=400&fit=crop",
+    "screenshots": [
+      "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=800&h=500&fit=crop",
+      "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&h=500&fit=crop",
+      "https://images.unsplash.com/photo-1635002962298-5e1155ceff0f?w=800&h=500&fit=crop",
+      "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&h=500&fit=crop"
+    ],
+    "loaders": {
+      "Vanilla": {
+        "versions": {
+          "1.20.4": { "fileSize": "892.7 MB", "downloadLink": "#dl-pbr-vanilla-1.20.4", "changelog": [{ "version": "v3.2.0", "date": "2025-01-11", "changes": "Added 50+ new stone and brick textures. All textures now available in 8K. Improved normal maps." }, { "version": "v3.1.0", "date": "2024-12-25", "changes": "New custom sky and weather effects. Added emissive block textures." }] },
+          "1.20.2": { "fileSize": "888.4 MB", "downloadLink": "#dl-pbr-vanilla-1.20.2", "changelog": [{ "version": "v3.1.5", "date": "2024-12-30", "changes": "Fixed tiling issues on fabric materials. Added seamless metal variants." }] },
+          "1.19.4": { "fileSize": "870.1 MB", "downloadLink": "#dl-pbr-vanilla-1.19.4", "changelog": [{ "version": "v3.0.0", "date": "2024-11-18", "changes": "Initial 1.19.4 release. Full block and item texture overhaul." }] }
+        }
+      }
+    }
+  },
+  {
+    "id": "terrain-generator",
+    "title": "Advanced Terrain Tool",
+    "description": "Procedural terrain generation mod with biome support, erosion simulation, and custom heightmap import. Create stunning landscapes in seconds.",
+    "category": "Tools",
+    "thumbnail": "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=400&h=240&fit=crop",
+    "banner": "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=900&h=400&fit=crop",
+    "screenshots": [],
+    "loaders": {
+      "Fabric": {
+        "versions": {
+          "1.20.4": { "fileSize": "12.8 MB", "downloadLink": "#dl-terrain-fabric-1.20.4", "changelog": [{ "version": "v4.0.0", "date": "2025-01-09", "changes": "Complete UI overhaul. GPU-accelerated real-time preview. 20+ new biome presets." }, { "version": "v3.8.0", "date": "2024-12-20", "changes": "Added heightmap import from PNG. New erosion simulation system." }] },
+          "1.20.2": { "fileSize": "12.5 MB", "downloadLink": "#dl-terrain-fabric-1.20.2", "changelog": [{ "version": "v3.8.2", "date": "2024-12-25", "changes": "Performance fix for large terrain gen. Fixed memory leak." }] }
+        }
+      },
+      "Forge": {
+        "versions": {
+          "1.20.4": { "fileSize": "13.1 MB", "downloadLink": "#dl-terrain-forge-1.20.4", "changelog": [{ "version": "v4.0.1", "date": "2025-01-10", "changes": "Forge 1.20.4 port. Resolved command conflicts with other mods." }] },
+          "1.19.2": { "fileSize": "11.9 MB", "downloadLink": "#dl-terrain-forge-1.19.2", "changelog": [{ "version": "v3.5.0", "date": "2024-11-05", "changes": "Legacy Forge 1.19.2 build. Basic terrain generation included." }] }
+        }
+      }
+    }
+  },
+  {
+    "id": "sci-fi-weapons",
+    "title": "Futuristic Weapon Arsenal",
+    "description": "Complete sci-fi weapon mod with energy weapons, railguns, plasma rifles, and gravity guns. Custom firing animations and particle effects included.",
+    "category": "Mods",
+    "thumbnail": "https://images.unsplash.com/photo-1446941611757-91d2c3bd3d45?w=400&h=240&fit=crop",
+    "banner": "https://images.unsplash.com/photo-1446941611757-91d2c3bd3d45?w=900&h=400&fit=crop",
+    "screenshots": [],
+    "loaders": {
+      "Fabric": {
+        "versions": {
+          "1.20.4": { "fileSize": "67.3 MB", "downloadLink": "#dl-scifi-fabric-1.20.4", "changelog": [{ "version": "v1.7.0", "date": "2025-01-07", "changes": "Added gravity gun and time-freeze device. Rebalanced all weapon tiers. New holographic sights." }, { "version": "v1.6.0", "date": "2024-12-18", "changes": "Added plasma shotgun. Improved hit detection for fast projectiles." }] },
+          "1.20.2": { "fileSize": "66.8 MB", "downloadLink": "#dl-scifi-fabric-1.20.2", "changelog": [{ "version": "v1.6.5", "date": "2024-12-22", "changes": "Fixed weapon swap glitch. Added color customization for all weapons." }] }
+        }
+      },
+      "Forge": {
+        "versions": {
+          "1.20.4": { "fileSize": "68.0 MB", "downloadLink": "#dl-scifi-forge-1.20.4", "changelog": [{ "version": "v1.7.1", "date": "2025-01-08", "changes": "Forge port stable. JEI recipes added for all weapons." }] },
+          "1.19.2": { "fileSize": "60.2 MB", "downloadLink": "#dl-scifi-forge-1.19.2", "changelog": [{ "version": "v1.4.0", "date": "2024-10-30", "changes": "Legacy 1.19.2 Forge build. Base weapon set included." }] }
+        }
+      },
+      "NeoForge": {
+        "versions": {
+          "1.20.4": { "fileSize": "67.8 MB", "downloadLink": "#dl-scifi-neoforge-1.20.4", "changelog": [{ "version": "v1.7.0", "date": "2025-01-08", "changes": "NeoForge 1.20.4 release. Full weapon set with all effects." }] }
+        }
+      }
+    }
+  },
+  {
+    "id": "nature-resource-pack",
+    "title": "Immersive Nature Pack",
+    "description": "Beautiful nature-themed resource pack with custom leaf textures, flower beds, custom water, and lush biome overhauls. Makes your world feel truly alive.",
+    "category": "Resource Packs",
+    "thumbnail": "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=400&h=240&fit=crop",
+    "banner": "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=900&h=400&fit=crop",
+    "screenshots": [
+      "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=800&h=500&fit=crop",
+      "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=800&h=500&fit=crop",
+      "https://images.unsplash.com/photo-1418065460487-3e41a6c84dc5?w=800&h=500&fit=crop"
+    ],
+    "loaders": {
+      "Vanilla": {
+        "versions": {
+          "1.20.4": { "fileSize": "340.5 MB", "downloadLink": "#dl-nature-vanilla-1.20.4", "changelog": [{ "version": "v2.0.0", "date": "2025-01-05", "changes": "Major overhaul. New animated leaf textures. Custom water shader. 30+ new flowers." }, { "version": "v1.9.0", "date": "2024-12-10", "changes": "Added cherry blossom and bamboo texture sets." }] },
+          "1.20.2": { "fileSize": "338.2 MB", "downloadLink": "#dl-nature-vanilla-1.20.2", "changelog": [{ "version": "v1.9.2", "date": "2024-12-15", "changes": "Fixed grass block side textures. Improved birch log colors." }] },
+          "1.19.4": { "fileSize": "320.0 MB", "downloadLink": "#dl-nature-vanilla-1.19.4", "changelog": [{ "version": "v1.8.0", "date": "2024-11-22", "changes": "1.19.4 release. Full forest and plains biome textures." }] }
+        }
+      }
+    }
+  },
+  {
+    "id": "redstone-tool",
+    "title": "Redstone Helper",
+    "description": "A handy tool mod that shows signal strength, highlights active redstone paths, and helps you debug your contraptions with visual overlays.",
+    "category": "Tools",
+    "thumbnail": "https://images.unsplash.com/photo-1581291518857-4e27b48ff24e?w=400&h=240&fit=crop",
+    "banner": "https://images.unsplash.com/photo-1581291518857-4e27b48ff24e?w=900&h=400&fit=crop",
+    "screenshots": [],
+    "loaders": {
+      "Fabric": {
+        "versions": {
+          "1.20.4": { "fileSize": "3.2 MB", "downloadLink": "#dl-redstone-fabric-1.20.4", "changelog": [{ "version": "v1.3.0", "date": "2025-01-04", "changes": "New signal strength heatmap overlay. Added repeater delay visualizer." }, { "version": "v1.2.0", "date": "2024-12-12", "changes": "Initial release. Basic redstone path highlighting." }] },
+          "1.20.2": { "fileSize": "3.0 MB", "downloadLink": "#dl-redstone-fabric-1.20.2", "changelog": [{ "version": "v1.2.1", "date": "2024-12-18", "changes": "1.20.2 port. Fixed overlay flicker bug." }] }
+        }
+      },
+      "Forge": {
+        "versions": {
+          "1.20.4": { "fileSize": "3.4 MB", "downloadLink": "#dl-redstone-forge-1.20.4", "changelog": [{ "version": "v1.3.1", "date": "2025-01-05", "changes": "Forge 1.20.4 compatible build. Resolved overlay render order." }] }
+        }
+      }
+    }
+  },
+  {
+    "id": "dark-fantasy-pack",
+    "title": "Dark Fantasy Resource Pack",
+    "description": "A moody, gothic-themed resource pack with dark stone textures, custom villager skins, eerie mob textures, and a deep atmospheric color palette.",
+    "category": "Resource Packs",
+    "thumbnail": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=400&h=240&fit=crop",
+    "banner": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=900&h=400&fit=crop",
+    "screenshots": [
+      "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=800&h=500&fit=crop",
+      "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&h=500&fit=crop",
+      "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=800&h=500&fit=crop",
+      "https://images.unsplash.com/photo-1595433707802-6b2626ef1c91?w=800&h=500&fit=crop"
+    ],
+    "loaders": {
+      "Vanilla": {
+        "versions": {
+          "1.20.4": { "fileSize": "512.3 MB", "downloadLink": "#dl-darkfantasy-vanilla-1.20.4", "changelog": [{ "version": "v1.4.0", "date": "2025-01-03", "changes": "Added custom end dimension textures. New dragon lair structure textures. Improved lighting ambiance." }, { "version": "v1.3.0", "date": "2024-12-08", "changes": "Added creeper and skeleton reskins. New dark oak and spruce textures." }] },
+          "1.20.2": { "fileSize": "510.1 MB", "downloadLink": "#dl-darkfantasy-vanilla-1.20.2", "changelog": [{ "version": "v1.3.2", "date": "2024-12-14", "changes": "Fixed torch and lantern glow colors. Added cave texture variants." }] },
+          "1.19.4": { "fileSize": "498.7 MB", "downloadLink": "#dl-darkfantasy-vanilla-1.19.4", "changelog": [{ "version": "v1.2.0", "date": "2024-11-25", "changes": "1.19.4 initial release. Full block and mob texture set." }] }
+        }
+      }
+    }
+  }
+]
