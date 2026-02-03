@@ -110,6 +110,24 @@ a{color:inherit;text-decoration:none;}
 .thumb:hover{border-color:var(--text-secondary);transform:translateY(-2px);}
 .thumb.active{border-color:var(--accent);box-shadow:0 0 0 2px var(--accent);}
 
+/* ── Detailed Description ── */
+.detailed-desc-section{margin-bottom:32px;}
+.detailed-desc{
+    background:var(--bg-card);
+    border:1px solid var(--border);
+    border-radius:12px;
+    padding:24px 28px;
+    font-size:15px;
+    color:var(--text-secondary);
+    line-height:1.8;
+    white-space:pre-line;
+}
+.detailed-desc p{margin-bottom:12px;}
+.detailed-desc p:last-child{margin-bottom:0;}
+.detailed-desc ul{list-style:none;padding:0;margin-top:4px;}
+.detailed-desc ul li{padding:3px 0;color:var(--text-secondary);}
+.detailed-desc ul li::before{content:"▸ ";color:var(--accent);font-weight:700;}
+
 /* ── Version Details ── */
 .version-details-section{margin-top:8px;}
 .section-title{font-size:18px;font-weight:600;margin-bottom:14px;}
