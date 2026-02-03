@@ -105,6 +105,27 @@
         setText('breadcrumbTitle',project.title);
         setText('category',project.category);
 
+        // detailed description — convert bullet lines into an HTML list
+        const ddEl=document.getElementById('detailedDescription');
+        if(ddEl && project.detailedDescription){
+            const lines=project.detailedDescription.split('\n');
+            let html='';
+            let inList=false;
+            lines.forEach(line=>{
+                const trimmed=line.trim();
+                if(trimmed.startsWith('•')){
+                    if(!inList){html+='<ul>';inList=true;}
+                    html+=`<li>${trimmed.replace('• ','')}</li>`;
+                } else {
+                    if(inList){html+='</ul>';inList=false;}
+                    if(trimmed==='') html+='<br>';
+                    else html+=`<p>${trimmed}</p>`;
+                }
+            });
+            if(inList) html+='</ul>';
+            ddEl.innerHTML=html;
+        }
+
         // conditional: banner vs slider
         const hasScreenshots = project.screenshots && project.screenshots.length > 0;
         if(hasScreenshots){
