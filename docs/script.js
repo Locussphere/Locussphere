@@ -105,6 +105,9 @@
         setText('breadcrumbTitle',project.title);
         setText('category',project.category);
 
+        // logo beside title (always shown)
+        document.getElementById('titleLogo').src=project.logo;
+
         // detailed description — convert bullet lines into an HTML list
         const ddEl=document.getElementById('detailedDescription');
         if(ddEl && project.detailedDescription){
@@ -126,18 +129,13 @@
             ddEl.innerHTML=html;
         }
 
-        // conditional: logo vs slider
+        // conditional: screenshots slider (Resource Packs only)
         const hasScreenshots = project.screenshots && project.screenshots.length > 0;
         if(hasScreenshots){
-            // hide logo, show slider
-            document.getElementById('logoWrap').classList.add('hidden');
             document.getElementById('sliderWrap').classList.remove('hidden');
             buildSlider();
         } else {
-            // show logo, hide slider
-            document.getElementById('logoWrap').classList.remove('hidden');
             document.getElementById('sliderWrap').classList.add('hidden');
-            document.getElementById('logoImg').src=project.logo;
         }
 
         // build loader dropdown
