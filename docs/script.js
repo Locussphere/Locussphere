@@ -61,7 +61,7 @@
             a.className='project-card';
             a.href=`details.html?id=${p.id}`;
             a.innerHTML=`
-                <img class="card-thumbnail" src="${p.thumbnail}" alt="${p.title}" onerror="this.style.background='var(--bg-tertiary)'">
+                <img class="card-thumbnail" src="${p.logo}" alt="${p.title}" onerror="this.style.background='var(--bg-tertiary)'">
                 <div class="card-content">
                     <div class="card-header">
                         <span class="card-title">${p.title}</span>
@@ -126,18 +126,18 @@
             ddEl.innerHTML=html;
         }
 
-        // conditional: banner vs slider
+        // conditional: logo vs slider
         const hasScreenshots = project.screenshots && project.screenshots.length > 0;
         if(hasScreenshots){
-            // hide banner, show slider
-            document.getElementById('bannerWrap').classList.add('hidden');
+            // hide logo, show slider
+            document.getElementById('logoWrap').classList.add('hidden');
             document.getElementById('sliderWrap').classList.remove('hidden');
             buildSlider();
         } else {
-            // show banner, hide slider
-            document.getElementById('bannerWrap').classList.remove('hidden');
+            // show logo, hide slider
+            document.getElementById('logoWrap').classList.remove('hidden');
             document.getElementById('sliderWrap').classList.add('hidden');
-            document.getElementById('bannerImg').src=project.banner;
+            document.getElementById('logoImg').src=project.logo;
         }
 
         // build loader dropdown
