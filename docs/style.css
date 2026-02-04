@@ -48,7 +48,7 @@ a{color:inherit;text-decoration:none;}
 .card-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:20px;}
 .project-card{background:var(--bg-card);border:1px solid var(--border);border-radius:12px;overflow:hidden;transition:transform .2s,box-shadow .2s,border-color .2s;cursor:pointer;display:block;text-decoration:none;color:inherit;}
 .project-card:hover{transform:translateY(-4px);box-shadow:0 8px 24px var(--shadow);border-color:var(--accent);}
-.card-thumbnail{width:100%;height:175px;object-fit:cover;display:block;background:var(--bg-tertiary);}
+.card-thumbnail{width:100%;height:175px;object-fit:contain;display:block;background:var(--bg-tertiary);padding:20px;}
 .card-content{padding:16px;}
 .card-header{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:8px;}
 .card-title{font-size:15px;font-weight:600;}
@@ -89,9 +89,9 @@ a{color:inherit;text-decoration:none;}
 .details-title{font-size:34px;font-weight:700;margin-bottom:10px;line-height:1.2;}
 .details-desc{font-size:16px;color:var(--text-secondary);line-height:1.6;margin-bottom:28px;}
 
-/* ── Banner (Mods / Tools / 3D) ── */
-.banner-wrap{width:100%;border-radius:14px;overflow:hidden;margin-bottom:32px;border:1px solid var(--border);}
-.banner-img{width:100%;height:320px;object-fit:cover;display:block;}
+/* ── Logo (Mods / Tools / 3D) ── */
+.logo-wrap{display:flex;justify-content:center;align-items:center;padding:32px 0;margin-bottom:28px;background:var(--bg-card);border-radius:14px;border:1px solid var(--border);}
+.logo-img{width:200px;height:200px;object-fit:contain;border-radius:12px;}
 
 /* ── Slider (Resource Packs only) ── */
 .slider-wrapper{margin-bottom:32px;}
