@@ -61,7 +61,9 @@
             a.className='project-card';
             a.href=`details.html?id=${p.id}`;
             a.innerHTML=`
-                <img class="card-thumbnail" src="${p.logo}" alt="${p.title}" onerror="this.style.background='var(--bg-tertiary)'">
+                <div class="card-thumbnail">
+                    <img src="${p.logo}" alt="${p.title}" style="max-width:100%;max-height:100%;object-fit:contain;" onerror="this.style.display='none'">
+                </div>
                 <div class="card-content">
                     <div class="card-header">
                         <span class="card-title">${p.title}</span>
